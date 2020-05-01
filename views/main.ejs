@@ -1,0 +1,30 @@
+<%- include('partials/header') %>
+
+<div class="container">
+  <center>
+    <h1>Top headlines</h1>
+  </center>
+
+
+
+  <div class="row text-center" style="display:flex; flex-wrap:wrap;">
+
+    <% headlines.forEach(function(item){%>
+    <div class="col-md-3 col-sm-6">
+      <div class="thumbnail">
+        <img src=<%= item.urlToImage%>>
+        <div class="caption">
+          <h4><strong><%=item.title%></strong></h4>
+        </div>
+        <p>
+          <a class="btn btn-primary btn-sm btn-b-mg" href=<%=item.url%>>
+            More Info
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <%});%>
+  </div>
+</div>
+<%- include('partials/footer') %>
